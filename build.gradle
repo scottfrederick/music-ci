@@ -122,6 +122,8 @@ cloudfoundry {
 
     trustSelfSignedCerts = true
 
+    variants = [ '-blue', '-green' ]
+
     services {
         "music-mysql" {
             label = "p-mysql"
