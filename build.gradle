@@ -119,6 +119,8 @@ cloudfoundry {
     memory = 512
     instances = 2
 
+    trustSelfSignedCerts = true
+
     services {
         "music-mysql" {
             label = "p-mysql"
