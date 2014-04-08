@@ -112,10 +112,11 @@ tomcatRun {
 
 cloudfoundry {
     target = "https://api.cf.scottfrederick.io"
+    organization = "sfrederick-org"
     space = "development"
 
     file = file("${war.archivePath}")
-    uri = "spring-music-ci.cfapps.io"
+    uri = "spring-music-ci.apps.scottfrederick.io"
     memory = 512
     instances = 2
 
