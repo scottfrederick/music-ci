@@ -1,3 +1,6 @@
+This is a copy of the Spring Music repo, used for testing Continuous Integration. 
+
+
 Spring Music
 ============
 
