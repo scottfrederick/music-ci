@@ -111,13 +111,11 @@ tomcatRun {
 }
 
 cloudfoundry {
-    target = "https://api.cf.scottfrederick.io"
-    organization = "sfrederick-org"
-    space = "development"
+    target = 'https://api.cf.scottfrederick.io'
+    organization = 'sfrederick-org'
 
     file = file("${war.archivePath}")
-    host = "spring-music-ci"
-    domain = "apps.scottfrederick.io"
+    domain = 'apps.scottfrederick.io'
     memory = 512
     instances = 2
 
@@ -130,6 +128,20 @@ cloudfoundry {
             label = "p-mysql"
             plan = "100mb"
         }
+    }
+}
+
+if (project.hasProperty('development')) {
+    cloudfoundry {
+        space = 'development'
+        host = 'spring-music-dev'
+    }
+}
+
+if (project.hasProperty('staging')) {
+    cloudfoundry {
+        space = 'staging'
+        host = 'spring-music-staging'
     }
 }
 
