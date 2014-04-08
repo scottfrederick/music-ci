@@ -111,18 +111,18 @@ tomcatRun {
 }
 
 cloudfoundry {
-    target = "https://api.run.pivotal.io"
+    target = "https://api.cf.scottfrederick.io"
     space = "development"
 
     file = file("${war.archivePath}")
-    uri = "spring-music-${randomWord}.cfapps.io"
+    uri = "spring-music-ci.cfapps.io"
     memory = 512
-    instances = 1
+    instances = 2
 
     services {
-        "music-mongodb" {
-            label = "mongolab"
-            plan = "sandbox"
+        "music-mysql" {
+            label = "p-mysql"
+            plan = "100mb"
         }
     }
 }
